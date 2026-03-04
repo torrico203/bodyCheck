@@ -19,7 +19,6 @@
 * **특징:** 큐(Queue) 기반의 범용 설계로 다양한 오브젝트에 즉시 적용 가능.
 
 ```csharp
-// 재사용 가능하고 확장성 높은 풀 시스템
 public GameObject GetObject()
 {
     if(this.poolingObjectQueue.Count<=1) 
@@ -31,7 +30,7 @@ public GameObject GetObject()
 }
 
 2️⃣ Addressable Asset 기반 리소스 관리
-📄 Assets/Game/Script/Manager/Assets.cs
+📄 [Assets.cs](Assets/Game/Script/Manager/Assets.cs)
 * 포인트: 비동기 로딩을 통해 로딩 화면 및 인게임 프레임 드랍 방지.
 * 특징: 메모리 관리 자동화를 위한 커스텀 컴포넌트 결합.
 public static void CreateAsset<T>(string path, Action<T> callback, Transform parent = null)
@@ -43,7 +42,7 @@ public static void CreateAsset<T>(string path, Action<T> callback, Transform par
 }
 
 3️⃣ 안전한 Singleton & JSON Data System
-📄 Assets/Game/Script/Manager/Data.cs
+📄 [Data.cs](Assets/Game/Script/Manager/Data.cs)
 * 포인트: 런타임 중 데이터 유실 방지 및 전역 접근성 확보.
 * 특징: 10초 주기 자동 저장 및 Newtonsoft.Json 활용.
 public static Data I
@@ -66,7 +65,7 @@ public static Data I
 포인트: 디자인 패턴 이해도, 안전한 구현
 
 4️⃣ OOP 기반 3단계 Stat System
-📄 Assets/Game/Script/Actor/Actor.cs
+📄 [Actor.cs](Assets/Game/Script/Actor/Actor.cs)
 * 포인트: 복잡한 스탯 계산 로직을 프로퍼티 내 캡슐화.
 * 설명: 기본/가변/조건부 스탯을 분리하여 버프/디버프 시스템 확장이 용이함.
 public Stat MStat { get => stat+vStat; } // 기본+가변
